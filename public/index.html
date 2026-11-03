@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nishtha Kapoor | Data Science Portfolio</title>
+  <meta name="description" content="Third-year Honours Bachelor of Science student specializing in Data Science at York University in Toronto, Ontario. Aspiring Data Analyst and Business Analyst.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Martian+Mono:wght@400;500&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="tabs" aria-label="Sections">
+      <ul>
+        <li><a href="#home" aria-current="location">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home" aria-labelledby="home-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-label"><span class="lamp" aria-hidden="true"></span> DATA SCIENCE &bull; YORK UNIVERSITY</p>
+          <h1 id="home-title" class="hero-name scramble">Nishtha Kapoor</h1>
+          <p class="hero-tagline">Data Science Student | Aspiring Data Analyst | Business &amp; Technology Enthusiast</p>
+          <p class="hero-intro">I turn data into insights, explore patterns, and build analytical solutions that connect technology with real-world problems.</p>
+          <p class="hero-subtext">Third-year Honours Bachelor of Science student specializing in Data Science at York University in Toronto, Ontario, Canada (Expected graduation: June 2028).</p>
+          
+          <div class="hero-actions">
+            <a class="console-btn primary" href="#projects">Explore My Projects</a>
+            <a class="console-btn" href="#contact">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="neural-panel">
+          <div class="neural-bar">
+            <div class="neural-status">
+              <span class="lamp" aria-hidden="true"></span>
+              <p class="panel-tag" aria-hidden="true">SYS.NEURAL_NET // ARCHITECTURE</p>
+            </div>
+            <button class="neural-toggle" type="button" aria-label="Toggle neural network animation">Pause network</button>
+          </div>
+          <div class="neural-viewport">
+            <svg class="neural-svg" viewBox="0 0 440 300" aria-label="Interactive multi-layer neural network diagram showing input, hidden, and output node activation paths" role="img">
+              <defs>
+                <linearGradient id="synapseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6c4f9b" stop-opacity="0.4" />
+                  <stop offset="50%" stop-color="#c49aff" stop-opacity="0.8" />
+                  <stop offset="100%" stop-color="#6c4f9b" stop-opacity="0.4" />
+                </linearGradient>
+              </defs>
+              <!-- Synapses (Connections) -->
+              <g class="synapse-layer" aria-hidden="true"></g>
+              <!-- Signal Pulses -->
+              <g class="packet-layer" aria-hidden="true"></g>
+              <!-- Neurons (Nodes) -->
+              <g class="neuron-layer" aria-hidden="true"></g>
+            </svg>
+            <div class="neural-legend" aria-hidden="true">
+              <span class="legend-item"><span class="node-indicator input"></span>Input (4)</span>
+              <span class="legend-item"><span class="node-indicator hidden"></span>Hidden (5+5)</span>
+              <span class="legend-item"><span class="node-indicator output"></span>Output (3)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="panel" id="about" aria-labelledby="about-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="about-title" class="panel-title scramble">About Me</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead-text">I am passionate about using data, mathematics, and technology to understand complex problems and uncover meaningful insights.</p>
+        <p>I enjoy exploring datasets, identifying patterns, investigating inconsistencies, developing analytical solutions, and translating findings into actionable recommendations.</p>
+        <p>I am continuously developing my technical and professional abilities through independent projects, university coursework, collaborative projects, hackathons, and extracurricular involvement.</p>
+        <p>I believe that effective data science and technology are not just about building models or applications; they are about understanding the problem, interpreting the results, and creating solutions that make a difference.</p>
+
+        <div class="panel-subsection">
+          <h3 class="subsection-title">Core Areas of Interest</h3>
+          <ul class="chips">
+            <li>Data Analytics and Business Intelligence</li>
+            <li>Machine Learning and Predictive Modelling</li>
+            <li>Statistical Analysis and Mathematical Modelling</li>
+            <li>Artificial Intelligence and Emerging Technologies</li>
+            <li>Software Development and Application Development</li>
+            <li>Financial Analytics and Business Strategy</li>
+            <li>Data Visualization and Data-Driven Decision-Making</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="panel" id="projects" aria-labelledby="projects-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="projects-title" class="panel-title scramble">Projects</h2>
+      </div>
+      <div class="panel-body">
+        <p>A comprehensive portfolio featuring all nine projects, highlighting problem formulation, analytical methodology, individual contributions, and technical tools.</p>
+        
+        <!-- Category Filter Controls -->
+        <div class="filter-controls" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn is-active" type="button" data-filter="all">All (9)</button>
+          <button class="filter-btn" type="button" data-filter="data-science">Data Science &amp; Analytics</button>
+          <button class="filter-btn" type="button" data-filter="ml-ai">Machine Learning &amp; AI</button>
+          <button class="filter-btn" type="button" data-filter="software">Software &amp; Hackathons</button>
+          <button class="filter-btn" type="button" data-filter="business">Business &amp; Finance</button>
+          <button class="filter-btn" type="button" data-filter="research">Research</button>
+        </div>
+
+        <ul class="project-list">
+          <!-- Project 6: Coven (Award Winner Featured) -->
+          <li class="project award-card" data-category="software ml-ai">
+            <div class="project-meta">
+              <span class="project-tag">Software Development | Accessibility | Hackathon</span>
+              <span class="project-year">October 2026</span>
+            </div>
+            <div class="award-banner">
+              <span class="award-icon" aria-hidden="true">&starf;</span>
+              <strong>Best Standard Hack – Winner</strong> (Hack or Treat – UofT Hacks)
+            </div>
+            <h3 id="project-coven">Coven – Accessibility-Focused Survival Planner</h3>
+            <p>A student survival planner designed to help students manage academic deadlines, understand their workload, and organize study sessions through an accessible and engaging planning experience.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Collaborated as one of four team members to build the Banshee planning experience using React and TypeScript.</li>
+                <li>Implemented deadline tracking to help students manage upcoming academic responsibilities.</li>
+                <li>Developed a workload-based "Crunch Moon" visualization to represent periods of heavier academic workload.</li>
+                <li>Created calendar previews and study-session scheduling that places sessions earlier during lighter weeks with breaks between focus sessions.</li>
+                <li>Tested the planning experience using sample-term data for demonstrations; contributed to responsive pixel-art UI components, Zustand state management, React Router, and PDF syllabus extraction.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Vite</li>
+                <li>Zustand</li>
+                <li>React Router</li>
+                <li>PDF Syllabus Extraction</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 1: SentryPay -->
+          <li class="project" data-category="data-science business">
+            <div class="project-meta">
+              <span class="project-tag">Data Science | Financial Analytics</span>
+              <span class="project-year">In Progress | 2026</span>
+            </div>
+            <h3 id="project-sentrypay">SentryPay – Credit Card Fraud Analysis</h3>
+            <p>An independent data science project focused on exploring fraudulent credit card transactions, identifying suspicious patterns, and investigating the factors associated with financial fraud.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Analyzed approximately 1.3 million credit card transactions using Python.</li>
+                <li>Identified a highly imbalanced dataset, with fraudulent transactions accounting for approximately 0.58% of all records.</li>
+                <li>Conducted exploratory data analysis to investigate fraud distributions across transaction amounts and merchant categories.</li>
+                <li>Audited identifiers, duplicate records, and timestamp consistency, investigating discrepancies between calendar timestamps and Unix timestamps, including leap-year boundary anomalies.</li>
+                <li>Created exploratory visualizations to support future feature engineering and predictive modelling.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>NumPy</li>
+                <li>matplotlib</li>
+                <li>Jupyter Notebook</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 2: Lung Cancer Prediction -->
+          <li class="project" data-category="ml-ai data-science">
+            <div class="project-meta">
+              <span class="project-tag">Machine Learning | Predictive Analytics</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 id="project-lungcancer">Lung Cancer Prediction – Machine Learning vs. Deep Learning</h3>
+            <p>A collaborative six-person university project comparing traditional machine learning and deep learning approaches for lung cancer prediction using 5,000 patient records.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Collaborated with a team of six students, dividing model development across three pairs.</li>
+                <li>Worked directly with Logistic Regression and TabNet.</li>
+                <li>Participated in a six-model comparative study involving Logistic Regression, Random Forest, XGBoost, MLP, TabNet, and FT-Transformer.</li>
+                <li>Evaluated model performance using precision, recall, F1-score, ROC-AUC, and PR-AUC.</li>
+                <li>Considered the critical clinical importance of reducing false negatives in a healthcare prediction context.</li>
+                <li>Helped consolidate model code, methodology, technical documentation, and the final presentation.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Python</li>
+                <li>Logistic Regression</li>
+                <li>TabNet</li>
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 3: Blue Jays Pitching Analytics -->
+          <li class="project" data-category="data-science ml-ai">
+            <div class="project-meta">
+              <span class="project-tag">Data Science | Sports Analytics | Business Intelligence</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 id="project-bluejays">Blue Jays Pitching Analytics</h3>
+            <p>A sports analytics project using MLB Statcast data to investigate pitching patterns and predict pitch outcomes through statistical analysis and machine learning.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Cleaned and analyzed 2,788 MLB Statcast pitch records.</li>
+                <li>Performed feature engineering to prepare data for predictive modelling.</li>
+                <li>Compared Logistic Regression and Random Forest classification models, achieving a reported ROC-AUC of 0.692.</li>
+                <li>Developed a four-chart Power BI dashboard analyzing pitch types, batter handedness, strike-zone patterns, and pitch distributions.</li>
+                <li>Used Power BI visualizations to communicate analytical findings effectively.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>scikit-learn</li>
+                <li>Power BI</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 4: Nutella Dark (Simulated Case Study) -->
+          <li class="project" data-category="business">
+            <div class="project-meta">
+              <span class="project-tag">Business Analytics | Financial Modelling | Market Research</span>
+              <span class="project-year">2026 &bull; Simulated Case Study</span>
+            </div>
+            <h3 id="project-nutella">Nutella Dark – Market Entry &amp; Financial Strategy</h3>
+            <p><em>(Simulated consumer packaged goods business case study)</em> Evaluating the commercial feasibility of launching a hypothetical premium dark chocolate product.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Combined a 47-respondent consumer survey with industry research from IBISWorld and Grand View Research.</li>
+                <li>Evaluated product positioning, market demand, and commercial viability.</li>
+                <li>Developed a scenario-based financial model using a simulated CAD $500,000 launch budget.</li>
+                <li>Calculated a break-even estimate of 111,359 units; conducted sensitivity analysis across pricing, sales volume, and demand assumptions.</li>
+                <li>Identified and reconciled a 13% inconsistency across market-source inputs.</li>
+                <li>Delivered an executive presentation with a structured go/no-go recommendation.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Microsoft Excel</li>
+                <li>Financial Modelling</li>
+                <li>Market Research</li>
+                <li>Sensitivity Analysis</li>
+                <li>PowerPoint</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 5: Work-Time Planner -->
+          <li class="project" data-category="software ml-ai">
+            <div class="project-meta">
+              <span class="project-tag">Artificial Intelligence | Hackathon | Application Development</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 id="project-worktime">Work-Time Planner – AI-Powered Productivity Tool</h3>
+            <p>A Gemini API-powered hackathon prototype designed to help users organize tasks, estimate time requirements, prioritize work, and dynamically adjust schedules.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Co-developed an AI-assisted planning prototype with friends.</li>
+                <li>Integrated the Gemini API to support task estimation and prioritization.</li>
+                <li>Designed a task priority queue and dynamic time allocation features.</li>
+                <li>Developed functionality to reallocate available time when deadlines, priorities, or schedules changed.</li>
+                <li>Included real-time progress tracking and the ability to add or deduct time.</li>
+                <li>Explored how generative AI can improve personal productivity and task management.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Gemini API</li>
+                <li>AI-Assisted Development</li>
+                <li>Task Prioritization</li>
+                <li>Application Prototyping</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 7: Housing Prices & School Proximity -->
+          <li class="project" data-category="data-science business">
+            <div class="project-meta">
+              <span class="project-tag">Data Analytics | Regression | Business Intelligence</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 id="project-housing">Housing Prices &amp; School Proximity</h3>
+            <p>A multi-source analytical project investigating the relationship between residential property prices and school proximity across Ontario.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Integrated Ontario housing, geographic proximity, and school-ranking datasets.</li>
+                <li>Reconciled inconsistencies between multiple data sources and transformed location data for analytical use.</li>
+                <li>Applied regression-based analysis to investigate relationships between housing prices and school proximity.</li>
+                <li>Documented source reconciliation and data transformation processes.</li>
+                <li>Used Power BI visualizations to communicate geographic patterns and analytical findings.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Python</li>
+                <li>Regression Analysis</li>
+                <li>Power BI</li>
+                <li>Data Cleaning</li>
+                <li>Data Integration</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 8: AI Reliability -->
+          <li class="project" data-category="research ml-ai">
+            <div class="project-meta">
+              <span class="project-tag">Research | Statistical Analysis | Artificial Intelligence</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 id="project-aireliability">AI Reliability in Academic Data Analysis</h3>
+            <p>A research-style evaluation examining how data quality and input perturbations affect the reliability of AI-assisted analytical outputs.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Investigated AI output reliability under different data-quality conditions.</li>
+                <li>Compared analytical behaviour across cleaner and noisier inputs.</li>
+                <li>Examined inconsistencies and error patterns in AI-generated analytical results.</li>
+                <li>Documented evaluation findings and practical limitations.</li>
+                <li>Developed recommendations emphasizing validation, responsible AI use, and rigorous human review.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Statistical Analysis</li>
+                <li>AI Evaluation</li>
+                <li>Data Quality Assessment</li>
+                <li>Research Documentation</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Project 9: Spotify Song Popularity Analysis -->
+          <li class="project" data-category="data-science">
+            <div class="project-meta">
+              <span class="project-tag">Data Analytics | Statistical Modelling | Consumer Analytics</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 id="project-spotify">Spotify Song Popularity Analysis</h3>
+            <p>A Python-based analytical project exploring the relationship between Spotify song popularity and audio characteristics to understand potential drivers of consumer engagement.</p>
+            <div class="project-details">
+              <p class="details-heading">Key Contributions:</p>
+              <ul class="detail-bullets">
+                <li>Explored Spotify song data and audio features including tempo, energy, danceability, acousticness, and valence.</li>
+                <li>Performed data cleaning, correlation analysis, and regression modelling.</li>
+                <li>Examined relationships between audio characteristics and song popularity.</li>
+                <li>Used visual analysis to communicate statistical findings and discussed modelling limitations.</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-label">Technologies:</span>
+              <ul class="chips mini">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>Regression Analysis</li>
+                <li>Statistical Analysis</li>
+                <li>Data Visualization</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="panel" id="skills" aria-labelledby="skills-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="skills-title" class="panel-title scramble">Technical Skills</h2>
+      </div>
+      <div class="panel-body">
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-category">Programming Languages</h3>
+            <ul class="chips">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>TypeScript</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-category">Python Libraries</h3>
+            <ul class="chips">
+              <li>pandas</li>
+              <li>NumPy</li>
+              <li>matplotlib</li>
+              <li>scikit-learn</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-category">Data Science &amp; Analytics</h3>
+            <ul class="chips">
+              <li>Data Cleaning &amp; Preprocessing</li>
+              <li>Exploratory Data Analysis</li>
+              <li>Feature Engineering</li>
+              <li>Statistical Analysis</li>
+              <li>Regression Analysis</li>
+              <li>Classification</li>
+              <li>Predictive Modelling</li>
+              <li>Model Evaluation</li>
+              <li>Data Interpretation</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-category">Business Intelligence &amp; Visualization</h3>
+            <ul class="chips">
+              <li>Microsoft Excel</li>
+              <li>PivotTables</li>
+              <li>VLOOKUP / XLOOKUP</li>
+              <li>SUMIF / SUMIFS</li>
+              <li>Power BI</li>
+              <li>KPI Dashboards</li>
+              <li>Data Visualization</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-category">Development &amp; Productivity Tools</h3>
+            <ul class="chips">
+              <li>React</li>
+              <li>Vite</li>
+              <li>Zustand</li>
+              <li>React Router</li>
+              <li>Git &amp; GitHub</li>
+              <li>Visual Studio Code</li>
+              <li>Jupyter Notebook</li>
+              <li>Gemini API</li>
+              <li>Microsoft Word</li>
+              <li>Microsoft PowerPoint</li>
+              <li>Google Workspace</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-category">Business &amp; Analytical Skills</h3>
+            <ul class="chips">
+              <li>Financial Modelling</li>
+              <li>Market Research</li>
+              <li>Sensitivity Analysis</li>
+              <li>Business Analysis</li>
+              <li>Problem-Solving</li>
+              <li>Process Documentation</li>
+              <li>Research &amp; Reporting</li>
+              <li>Presentation Development</li>
+              <li>Team Collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & LEADERSHIP SECTION -->
+    <section class="panel" id="experience" aria-labelledby="experience-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="experience-title" class="panel-title scramble">Experience &amp; Leadership</h2>
+      </div>
+      <div class="panel-body">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-role">Science Student Ambassador</span>
+              <span class="timeline-date">September 2026 – Present</span>
+            </div>
+            <p class="timeline-org">Faculty of Science, York University</p>
+            <ul class="detail-bullets">
+              <li>Represent the Faculty of Science and engage with prospective and current students.</li>
+              <li>Participate in outreach initiatives and student-support activities across campus.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-role">Operations Team Member</span>
+              <span class="timeline-date">September 2025 – Present</span>
+            </div>
+            <p class="timeline-org">AI &amp; Data Society, York University</p>
+            <ul class="detail-bullets">
+              <li>Support event coordination, process documentation, and operational planning.</li>
+              <li>Contribute to student initiatives within an active organization of over 100 members.</li>
+              <li>Help organize and support workshops, technical panels, and industry networking opportunities.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-role">Frosh Week Leader</span>
+              <span class="timeline-date">August 2026</span>
+            </div>
+            <p class="timeline-org">McLaughlin College, York University</p>
+            <ul class="detail-bullets">
+              <li>Welcomed incoming students and facilitated orientation activities.</li>
+              <li>Provided campus guidance and supported student engagement during transition to university life.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-role">Extracurricular Activities &amp; Athletics</span>
+              <span class="timeline-date">Ongoing</span>
+            </div>
+            <ul class="detail-bullets">
+              <li><strong>Model United Nations Delegate:</strong> Policy research, position papers, diplomacy, and public speaking.</li>
+              <li><strong>Indian Cultural Association:</strong> Active volunteer involvement and cultural event support.</li>
+              <li><strong>National-Level Fencing:</strong> Competitive sporting experience demonstrating discipline, tactical focus, commitment, and rigorous time management.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & AWARDS SECTION -->
+    <section class="panel" id="education" aria-labelledby="education-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="education-title" class="panel-title scramble">Education &amp; Awards</h2>
+      </div>
+      <div class="panel-body">
+        <div class="edu-card">
+          <div class="edu-head">
+            <div>
+              <h3 class="edu-institution">York University</h3>
+              <p class="edu-degree">Honours Bachelor of Science – Data Science</p>
+            </div>
+            <div class="edu-time">
+              <span>Toronto, Ontario, Canada</span>
+              <span>Third-year student &bull; Expected June 2028</span>
+            </div>
+          </div>
+
+          <div class="panel-subsection">
+            <h3 class="subsection-title">Awards &amp; Honours</h3>
+            <ul class="awards-list">
+              <li class="award-item highlight">
+                <span class="award-bullet">&starf;</span>
+                <div>
+                  <strong>Best Standard Hack – Winner</strong>
+                  <p class="award-desc">Hack or Treat, UofT Hacks (October 2026) – Recognized for the Coven accessibility survival planner.</p>
+                </div>
+              </li>
+              <li class="award-item">
+                <span class="award-bullet">&bull;</span>
+                <div>
+                  <strong>International Entrance Award for Academic Excellence</strong>
+                  <p class="award-desc">York University (2025)</p>
+                </div>
+              </li>
+              <li class="award-item">
+                <span class="award-bullet">&bull;</span>
+                <div>
+                  <strong>Winner – Bernoulli Challenge</strong>
+                  <p class="award-desc">York University (2025)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel-subsection">
+            <h3 class="subsection-title">Relevant Coursework</h3>
+            <ul class="chips">
+              <li>Data Analysis</li>
+              <li>Statistical Modelling</li>
+              <li>Data Structures for Data Science</li>
+              <li>Data and Information Management</li>
+              <li>Statistics</li>
+              <li>Machine Learning</li>
+              <li>Introduction to Finance</li>
+              <li>Financial Accounting</li>
+              <li>Marketing</li>
+              <li>Operations and Supply Chain Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="panel" id="contact" aria-labelledby="contact-title">
+      <div class="panel-head">
+        <span class="lamp" aria-hidden="true"></span>
+        <h2 id="contact-title" class="panel-title scramble">Contact</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead-text">I am actively seeking co-op, internship, and research opportunities in data science, data analytics, business intelligence, and financial analytics.</p>
+        <p>Feel free to reach out via email or connect with me on LinkedIn and GitHub.</p>
+
+        <ul class="contact-grid">
+          <li class="contact-item">
+            <span class="contact-label">EMAIL</span>
+            <a class="contact-link" href="mailto:knish221106@gmail.com">knish221106@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label">LINKEDIN</span>
+            <a class="contact-link" href="https://www.linkedin.com/in/nishtha-kapoor-421609395/" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/nishtha-kapoor-421609395
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label">GITHUB</span>
+            <a class="contact-link" href="https://github.com/Nishkr2006" target="_blank" rel="noopener noreferrer">
+              github.com/Nishkr2006
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label">LOCATION</span>
+            <span class="contact-text">Toronto, Ontario, Canada</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
