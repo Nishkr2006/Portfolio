@@ -1,0 +1,1059 @@
+/* ==========================================================================
+   MISSION CONTROL THEME: BLACK & DARK PURPLE
+   Designed for Nishtha Kapoor — Data Science & Analytics
+   ========================================================================== */
+
+:root {
+  /* Black and Dark Purple Palette */
+  --color-bg: #07050b;            /* Deep obsidian space black */
+  --color-surface: #100b1a;       /* Dark purple console base */
+  --color-surface-2: #181126;     /* Dark purple elevated layer for headers & sub-cards */
+  --color-surface-hover: #221838; /* Interactive hover layer */
+  --color-text: #f0ecf9;          /* Crisp high-contrast off-white text (16:1 contrast) */
+  --color-muted: #b5adc9;         /* Secondary lavender-gray (8:1 contrast) */
+  --color-border: #3b285a;        /* Console perimeter line */
+  --color-dim: #6c4f9b;           /* Dim purple for inactive synapses & bracket ticks */
+  --color-accent: #c49aff;        /* Radiant lilac: active pathways, tabs, links (9:1 contrast) */
+  --color-craft: #f07bff;         /* Electric violet/magenta: neural pulses & active status */
+  --color-award: #e8b338;         /* Subtle warm gold accent for hackathon win */
+
+  /* Typography */
+  --font-display: "Michroma", "Segoe UI", sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+  --font-label: "Martian Mono", ui-monospace, monospace;
+
+  /* Motion & Dimensions */
+  --ease-ramp: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --header-h: 2.75rem;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font: 400 1rem/1.65 var(--font-body);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 68ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+  transition: color 180ms ease, text-decoration-thickness 180ms ease;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+  color: var(--color-craft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-craft);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -5rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font: 700 0.875rem var(--font-label);
+  text-decoration: none;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+main {
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 4rem;
+}
+
+/* ==========================================================================
+   MISSION CONTROL BRACKETS & CONSOLE FRAMES
+   ========================================================================== */
+
+.panel,
+.neural-panel,
+.project,
+.edu-card,
+.timeline-item {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  --bracket-color: var(--color-dim);
+}
+
+.panel {
+  margin-top: 2rem;
+}
+
+/* Mission Control Corner Brackets: 8 crisp corner lines */
+.panel::before,
+.neural-panel::before,
+.project::before,
+.edu-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  --b: linear-gradient(var(--bracket-color), var(--bracket-color));
+  background:
+    var(--b) 0 0 / 14px 2px no-repeat,
+    var(--b) 0 0 / 2px 14px no-repeat,
+    var(--b) 100% 0 / 14px 2px no-repeat,
+    var(--b) 100% 0 / 2px 14px no-repeat,
+    var(--b) 0 100% / 14px 2px no-repeat,
+    var(--b) 0 100% / 2px 14px no-repeat,
+    var(--b) 100% 100% / 14px 2px no-repeat,
+    var(--b) 100% 100% / 2px 14px no-repeat;
+  transition: --bracket-color 260ms var(--ease-ramp);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 3.25rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.panel-body {
+  padding: 1.5rem;
+}
+
+.panel-subsection {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.subsection-title {
+  font: 500 0.85rem/1.3 var(--font-label);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+}
+
+.lead-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+/* Console Status Lamp */
+.lamp {
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+/* ==========================================================================
+   NAVIGATION: STICKY TABS
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: var(--color-bg);
+  box-shadow: inset 0 -1px 0 var(--color-border);
+}
+
+.tabs, .tabs ul {
+  height: 100%;
+}
+
+.tabs ul {
+  display: flex;
+  width: min(100%, 68rem);
+  margin-inline: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs ul::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs li {
+  flex: 1 1 0;
+  min-width: 5.5rem;
+}
+
+.tabs a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 44px;
+  padding: 0 0.5rem;
+  font: 700 clamp(0.72rem, 2.5vw, 0.825rem) var(--font-body);
+  color: var(--color-muted);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.tabs a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms var(--ease-ramp);
+}
+
+.tabs a:hover {
+  color: var(--color-text);
+  background: rgba(196, 154, 255, 0.05);
+}
+
+.tabs a[aria-current="location"] {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+}
+
+.tabs a[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   HERO & NEURAL NETWORK PANEL
+   ========================================================================== */
+
+.hero {
+  padding-top: 1rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 500 0.75rem/1.2 var(--font-label);
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-name {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font: 600 clamp(0.95rem, 2.8vw, 1.15rem)/1.4 var(--font-body);
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.hero-intro {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 0.85rem;
+}
+
+.hero-subtext {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* Console Buttons */
+.console-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font: 600 0.825rem var(--font-label);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 200ms var(--ease-ramp);
+}
+
+.console-btn:hover {
+  border-color: var(--color-accent);
+  color: #fff;
+  background: var(--color-surface-hover);
+  box-shadow: 0 0 12px rgba(196, 154, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.console-btn.primary {
+  background: var(--color-surface-2);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.console-btn.primary:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   NEURAL NETWORK CONSOLE PANEL (REPLACES CIRCULAR ORBIT)
+   ========================================================================== */
+
+.neural-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.neural-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.neural-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.panel-tag {
+  margin: 0;
+  font: 500 0.725rem/1.2 var(--font-label);
+  color: var(--color-muted);
+  letter-spacing: 0.06em;
+}
+
+.neural-toggle {
+  min-height: 36px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  font: 500 0.725rem/1 var(--font-label);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 180ms ease;
+}
+
+.neural-toggle:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-hover);
+  color: var(--color-craft);
+}
+
+.neural-viewport {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.neural-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 440 / 300;
+  background: #090611;
+  border: 1px solid rgba(59, 40, 90, 0.4);
+}
+
+/* Neural Network SVG Elements */
+.synapse-path {
+  fill: none;
+  stroke: var(--color-dim);
+  stroke-width: 1.25;
+  opacity: 0.32;
+  transition: stroke 260ms ease, opacity 260ms ease;
+}
+
+.synapse-path.active {
+  stroke: var(--color-accent);
+  opacity: 0.95;
+  stroke-width: 1.75;
+}
+
+.neuron-base {
+  fill: #130c22;
+  stroke: var(--color-dim);
+  stroke-width: 1.75;
+  transition: fill 200ms ease, stroke 200ms ease, filter 200ms ease;
+}
+
+.neuron-base.firing {
+  fill: var(--color-craft);
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px var(--color-craft));
+}
+
+.neuron-center {
+  fill: var(--color-accent);
+  opacity: 0.7;
+}
+
+.neuron-center.firing {
+  fill: #ffffff;
+  opacity: 1;
+}
+
+.signal-pulse {
+  fill: var(--color-craft);
+  filter: drop-shadow(0 0 4px var(--color-craft));
+}
+
+.neural-legend {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.65rem 0.5rem 0.25rem;
+  font: 400 0.725rem var(--font-label);
+  color: var(--color-muted);
+  border-top: 1px solid rgba(59, 40, 90, 0.5);
+  margin-top: 0.5rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.node-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--color-dim);
+}
+
+.node-indicator.input {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.node-indicator.hidden {
+  background: #2a1e45;
+  border-color: var(--color-dim);
+}
+
+.node-indicator.output {
+  background: var(--color-craft);
+  border-color: var(--color-craft);
+}
+
+/* ==========================================================================
+   PROJECTS SECTION
+   ========================================================================== */
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-btn {
+  padding: 0.4rem 0.85rem;
+  min-height: 38px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font: 500 0.75rem var(--font-label);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 180ms ease;
+}
+
+.filter-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
+
+.filter-btn.is-active {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+  font-weight: 700;
+}
+
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  --bracket-color: var(--color-dim);
+  transition: border-color 260ms var(--ease-ramp), transform 260ms var(--ease-ramp);
+}
+
+.project:hover {
+  border-color: var(--color-accent);
+  --bracket-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.project.is-hidden {
+  display: none;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font: 500 0.75rem var(--font-label);
+}
+
+.project-tag {
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.project-year {
+  color: var(--color-muted);
+}
+
+.project h3 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.project p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-details {
+  background: rgba(16, 11, 26, 0.6);
+  border: 1px solid rgba(59, 40, 90, 0.6);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.details-heading {
+  font: 600 0.8rem var(--font-label);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.detail-bullets {
+  list-style: square;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+.detail-bullets li {
+  margin-bottom: 0.45rem;
+}
+
+.detail-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.project-tech {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-label {
+  font: 600 0.75rem var(--font-label);
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+/* Award Card Styling for Coven */
+.project.award-card {
+  border-color: #63438a;
+  background: #19102c;
+}
+
+.award-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(232, 179, 56, 0.12);
+  border: 1px solid rgba(232, 179, 56, 0.4);
+  color: var(--color-award);
+  font: 600 0.785rem var(--font-label);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.award-icon {
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   CHIPS & TAGS
+   ========================================================================== */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips li {
+  padding: 0.4rem 0.85rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  font: 400 0.8125rem/1.4 var(--font-label);
+  color: var(--color-text);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.chips li:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-hover);
+}
+
+.chips.mini li {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  background: #120c20;
+}
+
+/* ==========================================================================
+   SKILLS SECTION
+   ========================================================================== */
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-group {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 1.25rem;
+}
+
+.skill-category {
+  font: 600 0.875rem var(--font-label);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(59, 40, 90, 0.5);
+  padding-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   EXPERIENCE & EDUCATION
+   ========================================================================== */
+
+.timeline {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.timeline-item {
+  padding: 1.25rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-role {
+  font: 700 1.05rem var(--font-body);
+  color: var(--color-text);
+}
+
+.timeline-date {
+  font: 500 0.775rem var(--font-label);
+  color: var(--color-muted);
+}
+
+.timeline-org {
+  font: 600 0.875rem var(--font-label);
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.edu-card {
+  padding: 1.5rem;
+  background: var(--color-surface-2);
+}
+
+.edu-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.25rem;
+}
+
+.edu-institution {
+  font-size: 1.35rem;
+  color: var(--color-text);
+}
+
+.edu-degree {
+  font: 600 1rem var(--font-body);
+  color: var(--color-accent);
+  margin-top: 0.25rem;
+}
+
+.edu-time {
+  display: flex;
+  flex-direction: column;
+  font: 500 0.8rem var(--font-label);
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.awards-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(16, 11, 26, 0.5);
+  border: 1px solid rgba(59, 40, 90, 0.5);
+}
+
+.award-item.highlight {
+  border-color: rgba(232, 179, 56, 0.4);
+  background: rgba(232, 179, 56, 0.08);
+}
+
+.award-bullet {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.award-item.highlight .award-bullet {
+  color: var(--color-award);
+}
+
+.award-desc {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   RESUME & CONTACT
+   ========================================================================== */
+
+.resume-console {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+
+.resume-info {
+  flex: 1 1 20rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1.25rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+
+.contact-label {
+  font: 600 0.725rem var(--font-label);
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+}
+
+.contact-link {
+  font: 600 clamp(0.9rem, 3.5vw, 1.05rem) var(--font-body);
+  color: var(--color-accent);
+  overflow-wrap: anywhere;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   MOTION, SCRAMBLE & ANIMATIONS
+   ========================================================================== */
+
+@keyframes ramp {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(-0.5rem);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-name {
+  animation: ramp 700ms var(--ease-ramp) backwards;
+}
+
+.hero-intro, .hero-tagline, .hero-subtext, .hero-actions {
+  animation: ramp 700ms var(--ease-ramp) 200ms backwards;
+}
+
+.neural-panel {
+  animation: ramp 700ms var(--ease-ramp) 350ms backwards;
+}
+
+/* Scramble Heading Display */
+.is-scrambling {
+  position: relative;
+  color: transparent;
+}
+
+.sc-view {
+  position: absolute;
+  inset: 0;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+.sc-live {
+  color: var(--color-craft);
+}
+
+.panel-title .sc-view {
+  white-space: nowrap;
+}
+
+/* Scroll Ramp States */
+.will-ramp > * {
+  opacity: 0;
+}
+
+.will-ramp.is-ramped > * {
+  opacity: 1;
+  animation: ramp 700ms var(--ease-ramp) backwards;
+}
+
+.will-ramp.is-ramped > :nth-child(2) {
+  animation-delay: 140ms;
+}
+
+.will-ramp.is-ramped .lamp {
+  animation: appear 500ms var(--ease-ramp) 600ms backwards;
+}
+
+.will-ramp.is-instant > *,
+.will-ramp.is-instant .lamp {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (MOBILE-FIRST)
+   ========================================================================== */
+
+@media (min-width: 48em) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .tabs ul {
+    width: min(100% - 2rem, 68rem);
+  }
+
+  .tabs li {
+    flex: 0 0 auto;
+    min-width: 6.5rem;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edu-time {
+    text-align: right;
+  }
+}
+
+@media (min-width: 64em) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .will-ramp > * {
+    opacity: 1 !important;
+  }
+
+  .neural-toggle {
+    display: none;
+  }
+}
+
