@@ -2,7 +2,7 @@
 
 A personal data science and analytics portfolio showcasing machine learning models, statistical analysis, data visualization, hackathon projects, and leadership experience.
 
-🌐 **Live Website:** [https://nishkr2006.github.io/Portfolio/](https://nishkr2006.github.io/Portfolio/)
+🌐 **Live Website:** portfolionishtha.vercel.app
 
 ---
 
